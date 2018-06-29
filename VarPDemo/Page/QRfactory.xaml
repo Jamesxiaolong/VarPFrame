@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="VarPDemo.Page.QRfactory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:CControl="clr-namespace:VarPControl.Controls;assembly=VarPControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1050">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/VarPDemo;component/Style/QRFactoryStyle.xaml" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="8" />
+            <RowDefinition Height="56" />
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="56" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFFFFF">
+            <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
+                <TextBox x:Name="txtQRCodeContent" FontSize="18" AcceptsReturn="True" TextWrapping="WrapWithOverflow"  Style="{DynamicResource QRInputBoxStyle}" Tag="请输入二维码内容"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
+                <Image x:Name="QrImg" Source="../Resource/Images/Qrfactory/readyImg.png" />
+            </Border>
+        </Grid>
+        <StackPanel Grid.Column="3"  Grid.Row="3" Orientation="Horizontal">
+            <Grid Width="5" />
+            <CControl:PButton  x:Name="GenerateBtn" Content="生成" MouseOverBackground="#56A059" PressedBackground="#60AA63" Background="#4CAF50" Foreground="White" AllowsAnimation="True" PIconVisibility="True" PIcon="&#xe65f;" PIconColor="White"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="85" Click="GenerateBtn_Click"/>
+            <Grid Width="20" />
+            <CControl:PButton x:Name="SaveBtn" Content="保存" HorizontalAlignment="Center" AllowsAnimation="True" PIconVisibility="True" PIcon="&#xe634;"  VerticalAlignment="Center" Height="40" Width="85" Click="SaveBtn_Click" CornerRadius="2"/>
+        </StackPanel>
+
+        <Grid Grid.Column="4" Grid.Row="1" Background="#FFFFFF" Height="180" Width="280">
+            <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
+                <Image x:Name="logoImg" Height="180" Width="280"/>
+            </Border>
+        </Grid>
+
+        <CControl:PButton Grid.Column="4"  Grid.Row="3" Content="添加Logo" x:Name="addLogoBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100" Click="addLogoBtn_Click" CornerRadius="4,4,4,4"/>
+        <Grid Grid.Column="1" Grid.Row="4" Background="#FFFFFF">
+            <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
+                <TextBox x:Name="DecodeContent" FontSize="18" AcceptsReturn="True" IsReadOnly="True" TextWrapping="WrapWithOverflow"  Style="{DynamicResource QRInputBoxStyle}" Tag="解码内容"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="3" Grid.Row="4">
+            <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
+                <Image x:Name="decodeImg" />
+            </Border>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Column="3"  Grid.Row="5">
+            <Grid Width="5" />
+            <CControl:PButton x:Name="OpenBtn" Content="打开" HorizontalAlignment="Center" AllowsAnimation="True" PIconVisibility="True" PIcon="&#xe648;" PIconColor="#4CAF50"  VerticalAlignment="Center" Height="40" Width="85" Click="OpenBtn_Click" CornerRadius="2"/>
+            <Grid Width="20" />
+            <CControl:PButton x:Name="DecodeBtn" Content="解码" HorizontalAlignment="Center" AllowsAnimation="True" PIconVisibility="True" PIcon="&#xe634;"  VerticalAlignment="Center" Height="40" Width="85" Click="DecodeBtn_Click" CornerRadius="2"/>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>
