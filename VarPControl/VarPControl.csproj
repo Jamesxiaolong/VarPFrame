@@ -96,6 +96,7 @@
     <Compile Include="{Core}\Common\BaseNotifyPropertyChanged.cs" />
     <Compile Include="{Core}\Common\DefaultAsynNotify.cs" />
     <Compile Include="{Core}\Common\IAsynNotify.cs" />
+    <Compile Include="{Core}\ControlAttachProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
